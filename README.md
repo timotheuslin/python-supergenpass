@@ -1,7 +1,7 @@
 SuperGenPass Python module and GTK interface
 ==============================================
 
-This project is a Python 3.x implementation of the [SuperGenPass bookmarklet](http://www.supergenpass.com/), designed to be compatible with the [Android SuperGenPass utility]((http://staticfree.info/projects/sgp/)) and [iOS UberGenPass]((https://github.com/mjmsmith/ubergenpass-swift)).
+This project is a Python 3.x implementation of the [SuperGenPass bookmarklet](http://www.supergenpass.com/), designed to be compatible with the [Android SuperGenPass utility](http://staticfree.info/projects/sgp/) and [iOS UberGenPass](https://github.com/mjmsmith/ubergenpass-swift).
 
 It provides a module to be used in other programs, a command-line interface and a GTK 3 interface.
 
@@ -21,11 +21,10 @@ or
 
     python -m pip install --user --upgrade git+https://github.com/timotheuslin/python-supergenpass
 
-The module and the CLI (optionally) require pyperclip for clipboard manipulation. pyperclip is automatically installed by setuptools.
+The module and the CLI (optionally) require [pyperclip](https://pypi.org/project/pyperclip/) for clipboard manipulation. [pyperclip](https://pypi.org/project/pyperclip/) is automatically installed by setuptools.
 
-The GTK interface requires GTK+ 3 and PyGObject:
+The GTK interface requires GTK+ 3 and [PyGObject](https://live.gnome.org/PyGObject).
 
-    PyGObject: https://live.gnome.org/PyGObject
 
 
 # Usage
@@ -77,5 +76,4 @@ Some code/inspiration is taken from the following GPLv3+ projects:
 * [Android SuperGenPass utility, Copyright (C) 2010 Steve Pomeroy](http://staticfree.info/projects/sgp/)
 * [iOS UberGenPass, Copyright (C) 2016 Mark Smith](https://github.com/mjmsmith/ubergenpass-swift)
 
-* SuperGenPass icon, (C) 2010 by Steve Pomeroy, used under a `Creative Commons Attribution-ShareAlike license`
-    * [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/)
+* SuperGenPass icon, (C) 2010 by Steve Pomeroy, used under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/).
