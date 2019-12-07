@@ -21,6 +21,7 @@ import argparse
 import configparser
 import getpass
 import hashlib
+import pyperclip
 from . import *
 
 
@@ -75,6 +76,8 @@ group.add_argument("-n", "--nostrip", action='store_false', dest='strip',
                    help="use domain name as is without stripping")
 group.add_argument("-g", "--graphical", action='store_true',
                    help="launch graphical user interface")
+group.add_argument("-c", "--clipboard", action='store_true',
+                   help="store the generated password to clipboard")
 group = parser.add_argument_group("generator options")
 group.description = "These options define how the password will be " \
                     "generated. The default options may be set in " + \
@@ -115,9 +118,15 @@ else:
                 print("Invalid domain name", file=sys.stderr)
                 sys.exit(1)
         master = getpass.getpass("Master password: ") + args.salt
+        generated_pass = ''
         if args.pin:
-            print(generate_pin(master, domain, args.pinlength))
+            generated_pass = generate_pin(master, domain, args.pinlength)
         else:
-            print(generate(master, domain, args.length, args.algorithm))
+            generated_pass = generate(master, domain, args.length, args.algorithm)
+        if args.clipboard and generated_pass:
+            pyperclip.copy(generated_pass)
+            print("Generated password now in clipboard.")
+        else:
+            print(generated_pass)
     except KeyboardInterrupt:
         print()

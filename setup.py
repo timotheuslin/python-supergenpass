@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # SuperGenPass setup script
 # Copyright (C) 2012-2013  Vianney le Clément de Saint-Marcq <vleclement@gmail.com>
+# Copyright (C) 2019 Timothy Lin <timothy.gh.lin@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,18 +16,19 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name="supergenpass",
-      version="0.1",
+      version="0.1.1",
       description="SuperGenPass Python module and GTK interface",
       author="Vianney le Clément de Saint-Marcq",
       author_email="vleclement@gmail.com",
-      url="https://bitbucket.org/vianney/supergenpass",
+      url="https://github.com/timotheuslin/python-supergenpass",
       license="GPLv3+",
       packages=['supergenpass'],
       package_data={'supergenpass': ['data/*']},
       scripts=['scripts/supergenpass'],
       data_files=[('share/pixmaps', ['data/supergenpass.png']),
                   ('share/applications', ['data/supergenpass.desktop'])],
+      install_requires=['pyperclip>=1.7.0',],
      )
